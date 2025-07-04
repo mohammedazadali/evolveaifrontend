@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+*{
+  transition: 0.5s all;
+}
+
+.chatBody {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.chatBody::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
