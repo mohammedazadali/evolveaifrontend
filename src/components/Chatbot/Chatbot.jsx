@@ -87,7 +87,7 @@ const handleSubmit = async (e) => {
     <div className="h-screen w-full bg-purple-200 flex flex-col">
       <header className="h-16 w-full flex items-center justify-between px-6 bg-white backdrop-blur-sm border-b text-black shadow-sm">
         <h1 className="text-lg md:text-xl font-bold tracking-wide">
-          🤖 BrickBot AI Assistant
+          🤖 Evolve AI Assistant
         </h1>
         <span className="text-sm opacity-70 hidden md:block">🟢 Online</span>
       </header>
