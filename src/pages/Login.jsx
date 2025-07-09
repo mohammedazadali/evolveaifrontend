@@ -5,9 +5,11 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { ToastContainer, toast } from "react-toastify";
+import { useAuth } from "../context/AuthContext";
 
 
 const Login = () => {
+  const {setUser} = useAuth()
   const [activeTab, setActiveTab] = useState("signin");
   const navigate = useNavigate();
   const url =
@@ -34,16 +36,23 @@ onSubmit: async (values, { resetForm, setFieldValue }) => {
 
     const response = await axios.post(url, payload);
     const token = response.data.token;
+    const username = response.data?.user?.username || "Guest"; 
+    const userId = response.data?.user?.id;
 
     if (response.status === 200) {
-      toast.success("Login successful!", {
-        position: "top-right",
-        autoClose: 3000,
-      });
+  toast.success("Login successful!", {
+    position: "top-right",
+    autoClose: 3000,
+  });
 
-      localStorage.setItem("token", token);
-      navigate("/chatbot");
-    } 
+  localStorage.setItem("token", token);
+  localStorage.setItem("username", username);
+  localStorage.setItem("userId", userId);
+
+  setUser({ token, username, userId });
+
+  navigate("/");
+}
     else if (response.status === 201) {
  
       toast.success("Signup successful!", {

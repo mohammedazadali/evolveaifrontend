@@ -56,10 +56,10 @@ const Message = ({ from, text, time, index }) => {
       className={`flex ${from === "user" ? "justify-end" : "justify-start"}`}
     >
       <div
-        className={`px-5 py-3 max-w-[75%] text-sm md:text-base rounded-2xl backdrop-blur-md shadow-lg ${
+        className={`px-5 py-3 max-w-[75%] text-[13px] rounded-2xl backdrop-blur-md shadow-lg ${
           from === "bot"
             ? "bg-white text-black border border-white/20"
-            : "bg-[#553EEE] text-white"
+            : "bg-[#EDEFE8] text-black"
         }`}
       >
         <p className="leading-snug whitespace-pre-wrap">{parseMessage(text)}</p>

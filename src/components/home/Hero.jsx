@@ -4,24 +4,24 @@ import { IoPlayCircleOutline } from "react-icons/io5";
 
 const Hero = () => {
   return (
-    <section className=" relative md:h-screen overflow-hidden h-[100%] flex justify-center items-center" >
+    <section className=" relative  overflow-hidden h-[100%] flex justify-center items-center" >
       <div className="absolute left-0 top-0 h-full w-[65%] s bg-[#EDEFE8] clip-diagonal -z-10" />
       <div className=" px-[6%] py-16 flex flex-col-reverse md:flex-row items-center gap-10">
         {/* Text Content */}
         <div className="basis-[50%]">
-          <h1 className="text-[58px] font-bold leading-tight mb-6">
+          <h1 className="md:text-[58px] text-[32px] font-bold leading-tight mb-6">
             Wear the Trend, Own the Moment! with DanTrend
           </h1>
-          <p className="text-lg font-extralight text-gray-600 mb-8">
+          <p className="sm:text-lg text-sm font-extralight text-gray-600 mb-8">
             Your wardrobe deserves a glow-up! Discover fashion that’s fresh,
             fierce, and totally you.
           </p>
-          <div className="flex items-center gap-4 mt-6">
-            <button className="bg-black text-white py-3 px-6 rounded-full text-base font-semibold hover:bg-[#5E705A] transition duration-300">
+          <div className="flex items-center justify-center md:justify-start gap-4 mt-6">
+            <button className="bg-black text-white py-3 px-6 rounded-full text-base font-semibold  transition duration-300">
               Shop Now
             </button>
 
-            <button className="border border-black text-black py-3 px-6 rounded-full text-base font-semibold hover:bg-[#5E705A] transition duration-300 flex items-center gap-2">
+            <button className="border border-black text-black py-3 px-6 rounded-full text-base font-semibold  transition duration-300 flex items-center gap-2">
               <IoPlayCircleOutline size={22} /> Watch Now
             </button>
           </div>

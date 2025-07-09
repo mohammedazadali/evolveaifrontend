@@ -10,11 +10,11 @@ const ChatForm = ({ onSubmit, inputValue, setInputValue }) => {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         placeholder="Type a message..."
-        className="flex-1 bg-white text-black placeholder-white/60 border rounded-full px-5 py-3 outline-none focus:ring-2 border-[#553EEE] backdrop-blur-sm"
+        className="flex-1 bg-white text-black placeholder-white/60 border rounded-full px-5 py-3 outline-none  border-gray-400 backdrop-blur-sm"
       />
       <button
         type="submit"
-        className="p-3 rounded-full bg-[#553EEE] transition shadow-xl text-white cursor-pointer"
+        className="p-3 rounded-full bg-[#A6C18F] transition shadow-xl text-white cursor-pointer"
       >
         <SendHorizonal size={20} />
       </button>
