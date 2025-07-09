@@ -25,7 +25,7 @@ const Chatbot = () => {
 
   const fetchChatHistory = async () => {
     try {
-      const res = await axios.get("https://evolveai-4.onrender.com/api/chat/history?page=1",{
+      const res = await axios.get("https://dantrendsapi-50029223867.development.catalystappsail.in/api/chat/history?page=1",{
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -50,7 +50,7 @@ const handleSubmit = async (e) => {
   setInputValue("");
 
   try {
-    const res = await axios.post("https://evolveai-4.onrender.com/api/chat/send", { message: inputValue },{
+    const res = await axios.post("https://dantrendsapi-50029223867.development.catalystappsail.in/api/chat/send", { message: inputValue },{
     headers: {
       Authorization: `Bearer ${token}`,
     },
