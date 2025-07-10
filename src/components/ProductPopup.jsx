@@ -10,7 +10,7 @@ import { useOrderAction } from "../hook/useOrderAction";
 const ProductPopup = ({ product, onClose }) => {
   const { user } = useAuth();
   const navigate = useNavigate();
-  const onAddToCart = useCartActions();
+  const {onAddToCart} = useCartActions();
   const { placeOrder } = useOrderAction();
 
   const [quantity, setQuantity] = useState(1);
