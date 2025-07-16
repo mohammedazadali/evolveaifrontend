@@ -3,6 +3,7 @@ import { login } from "../assets/data";
 
 const Auth = () => {
   const [activeTab, setActiveTab] = useState("signin");
+
   return (
     <>
       <section className="justify-center flex items-center h-screen bg-white">

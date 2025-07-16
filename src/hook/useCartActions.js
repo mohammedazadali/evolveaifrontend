@@ -2,10 +2,12 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useCart } from "../context/CartContext";
 
 export const useCartActions = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
+  const { fetchCart } = useCart();
 
   const onAddToCart = async (product, quantity = 1) => {
     if (!user || !user.token) {
@@ -32,6 +34,7 @@ export const useCartActions = () => {
       );
 
       toast.success("Item added to cart!");
+      fetchCart()
     } catch (error) {
       const errMsg =
         error.response?.data?.message || "Failed to add item to cart.";

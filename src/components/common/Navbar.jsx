@@ -3,13 +3,16 @@ import { logo } from "../../assets/data";
 import { ShoppingCart, User, Menu, X } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useCart } from "../../context/CartContext";
 
 const Navbar = () => {
-  const { user, setUser } = useAuth();
+  const { user, setUser, logout } = useAuth();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const { cart } = useCart();
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
   const toggleDropdown = () => setDropdownOpen((prev) => !prev);
@@ -55,12 +58,13 @@ const Navbar = () => {
         <div className="flex items-center gap-4 text-gray-700 text-xl md:gap-6 relative">
           {/* Login/Signup or User */}
           {!user ? (
-            <button
-              onClick={() => navigate("/login")}
-              className="bg-[#A3B18C] text-white text-sm px-4 py-2 rounded-md font-semibold hover:bg-[#8C9C7C] transition duration-300"
-            >
-              Login / Signup
-            </button>
+            <User
+                onClick={() => navigate("/login")}
+                className="cursor-pointer hover:text-black"
+                size={22}
+                strokeWidth={1.8}
+                title="User"
+              />
           ) : (
             <div className="relative" ref={dropdownRef}>
               <User
@@ -106,13 +110,18 @@ const Navbar = () => {
           )}
 
           {/* Cart */}
-          <ShoppingCart
-            className="cursor-pointer hover:text-black"
-            size={22}
-            strokeWidth={1.8}
-            title="Cart"
-            onClick={() => navigate("/cart")}
-          />
+          <div className="relative">
+            <div className="bg-red-500 text-white flex justify-center items-center rounded-full text-[10px] w-4 h-4 absolute -top-2 -right-2">
+              {cart?.items?.length || 0}
+            </div>
+            <ShoppingCart
+              className="cursor-pointer hover:text-black"
+              size={22}
+              strokeWidth={1.8}
+              title="Cart"
+              onClick={() => navigate("/cart")}
+            />
+          </div>
 
           {/* Mobile Menu Toggle */}
           <button className="md:hidden focus:outline-none" onClick={toggleMenu}>

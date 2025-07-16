@@ -9,10 +9,11 @@ import { ProductProvider } from "./context/ProductContext";
 import ChatbotWrapper from "./components/ChatbotWrapper";
 import CartPage from "./components/CartPage";
 import { AuthProvider } from "./context/AuthContext";
+import { CartProvider } from "./context/CartContext";
 
 const AppLayout = () => {
   const location = useLocation();
-  const hideNavbarRoutes = ["/login"]; 
+  const hideNavbarRoutes = ["/login"];
 
   const shouldHideNavbar = hideNavbarRoutes.includes(location.pathname);
 
@@ -36,7 +37,9 @@ const App = () => {
     <BrowserRouter>
       <ProductProvider>
         <AuthProvider>
-          <AppLayout />
+          <CartProvider>
+            <AppLayout />
+          </CartProvider>
         </AuthProvider>
       </ProductProvider>
     </BrowserRouter>
