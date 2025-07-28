@@ -63,6 +63,8 @@ const CartPage = () => {
               alt={item.title}
               className="w-20 h-20 object-contain rounded"
             />
+
+              {/* pro  */}
             <div className="flex-1">
               <h3 className="text-lg font-semibold">{item.title}</h3>
               <p className="text-gray-600 text-sm">
