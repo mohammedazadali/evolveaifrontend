@@ -24,7 +24,7 @@ const Chatbot = () => {
   const fetchChatHistory = async () => {
     try {
       const res = await axios.get(
-        "https://dantrendsapi-50029223867.development.catalystappsail.in/api/chat/history?page=1",
+        "https://dantrendsapi-50029223867.catalystappsail.in/api/chat/history?page=1",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -55,7 +55,7 @@ const Chatbot = () => {
 
     try {
       const res = await axios.post(
-        "https://dantrendsapi-50029223867.development.catalystappsail.in/api/chat/send",
+        "https://dantrendsapi-50029223867.catalystappsail.in/api/chat/send",
         { message: inputValue },
         {
           headers: {

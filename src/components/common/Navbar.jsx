@@ -46,12 +46,19 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-6 text-gray-700 font-medium">
-          <li className="cursor-pointer hover:text-black transition">Mens</li>
-          <li className="cursor-pointer hover:text-black transition">Womens</li>
-          <li className="cursor-pointer hover:text-black transition">Kids</li>
-          <li className="cursor-pointer hover:text-black transition">
-            New & Featured
-          </li>
+          <Link to="/men" className="hover:text-black transition">
+            <li>Mens</li> 
+          </Link>
+          <Link to="/women" className="hover:text-black transition">
+            <li>Womens</li>
+          </Link>
+
+          <Link to="/kids" className="hover:text-black transition">
+            <li>Kids</li>
+          </Link>
+          <Link to="/new" className="hover:text-black transition">
+            <li>New & Featured</li>
+          </Link>
         </ul>
 
         {/* Icons */}

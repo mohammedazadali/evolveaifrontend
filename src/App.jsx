@@ -10,6 +10,10 @@ import ChatbotWrapper from "./components/ChatbotWrapper";
 import CartPage from "./components/CartPage";
 import { AuthProvider } from "./context/AuthContext";
 import { CartProvider } from "./context/CartContext";
+import Mens from "./pages/Mens";
+import Womens from "./pages/Womens";
+import Kids from "./pages/Kids";
+import New from "./pages/New,";
 
 const AppLayout = () => {
   const location = useLocation();
@@ -25,6 +29,10 @@ const AppLayout = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/men" element={<Mens />} />
+        <Route path="/women" element={<Womens />} />
+        <Route path="/kids" element={<Kids />} />
+        <Route path="/new" element={<New />} />
       </Routes>
 
       <ChatbotWrapper />

@@ -18,7 +18,7 @@ export const useCartActions = () => {
 
     try {
       const response = await axios.post(
-        "https://dantrendsapi-50029223867.development.catalystappsail.in/api/cart/add",
+        "https://dantrendsapi-50029223867.catalystappsail.in/api/cart/add",
         {
           productId: product._id,
           title: product.title,

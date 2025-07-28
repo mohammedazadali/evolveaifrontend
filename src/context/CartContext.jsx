@@ -12,7 +12,7 @@ export const CartProvider = ({ children }) => {
   const fetchCart = async () => {
     if (!user?.token) return;
     try {
-      const res = await axios.get("https://dantrendsapi-50029223867.development.catalystappsail.in/api/cart", {
+      const res = await axios.get("https://dantrendsapi-50029223867.catalystappsail.in/api/cart", {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       setCart(res.data);

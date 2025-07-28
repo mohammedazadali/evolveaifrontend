@@ -13,7 +13,7 @@ const Mens = () => {
   };
 
   // Filter for men's category
-  const mensProducts = products.filter((p) => p.category === "mens-shirts");
+  const mensProducts = products.filter((p) => p.newArrival === true);
 
   if (loading) return <div>Loading...</div>;
 

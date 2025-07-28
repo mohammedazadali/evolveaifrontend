@@ -14,8 +14,8 @@ const Login = () => {
   const navigate = useNavigate();
   const url =
     activeTab === "signin"
-      ? "https://dantrendsapi-50029223867.development.catalystappsail.in/api/auth/login"
-      : "https://dantrendsapi-50029223867.development.catalystappsail.in/api/auth/register";
+      ? "https://dantrendsapi-50029223867.catalystappsail.in/api/auth/login"
+      : "https://dantrendsapi-50029223867.catalystappsail.in/api/auth/register";
 
 const formik = useFormik({
   initialValues: {

@@ -12,9 +12,9 @@ const Women = () => {
     };
 
   // Filter for men's category
-  const womenProducts = products.filter((p) => p.category === "womens-dresses");
+const shuffledWomenProducts = [...products].sort(() => 0.5 - Math.random());
+const womenProducts = shuffledWomenProducts.slice(0, 10);
 
-  const womenWatch = products.filter((p) => p.category === "mens-watches");
 
   if (loading) return <div>Loading...</div>;
 
@@ -35,11 +35,7 @@ const Women = () => {
         />
       )}
 
-      <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
-        {womenWatch.map((p) => (
-          <ProductCard key={p.id} product={p} onClick={setSelectedProduct}/>
-        ))}
-      </ul>
+    
     </section>
   );
 }

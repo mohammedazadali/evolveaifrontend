@@ -19,7 +19,7 @@ const CartPage = () => {
     }
     try {
       const res = await axios.post(
-        "https://dantrendsapi-50029223867.development.catalystappsail.in/api/cart/order",
+        "https://dantrendsapi-50029223867.catalystappsail.in/api/cart/order",
         {},
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -70,7 +70,7 @@ const CartPage = () => {
               </p>
             </div>
             <p className="font-bold text-black text-lg">
-              ₹{item.price * item.quantity}
+              ₹{(item.price * item.quantity).toFixed(2)}
             </p>
           </li>
         ))}
