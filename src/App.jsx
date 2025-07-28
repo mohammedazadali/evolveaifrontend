@@ -14,6 +14,8 @@ import Mens from "./pages/Mens";
 import Womens from "./pages/Womens";
 import Kids from "./pages/Kids";
 import New from "./pages/New,";
+import Footer from "./components/common/Footer";
+import NotFound from "./components/common/NotFound";
 
 const AppLayout = () => {
   const location = useLocation();
@@ -33,9 +35,11 @@ const AppLayout = () => {
         <Route path="/women" element={<Womens />} />
         <Route path="/kids" element={<Kids />} />
         <Route path="/new" element={<New />} />
+         <Route path="*" element={<NotFound />} />
       </Routes>
 
       <ChatbotWrapper />
+      {!shouldHideNavbar && <Footer />}
     </>
   );
 };

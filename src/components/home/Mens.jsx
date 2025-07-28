@@ -18,7 +18,7 @@ const Mens = () => {
   if (loading) return <div>Loading...</div>;
 
   return (
-    <section className="px-[6%] py-[50px]">
+    <section className="px-[6%] py-[50px]" id="shop">
       <h2 className="text-xl text-center text-[2rem] mb-6 font-bold">Best Seller</h2>
       <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
         {mensProducts.map((p) => (
